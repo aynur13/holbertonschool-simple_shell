@@ -1,31 +1,32 @@
-.TH SIMPLE_SHELL 1 "December  2024" "version 1.0" "Simple Shell Project"
+.TH SIMPLE_SHELL 1 "December 2024" "version 1.0" "Simple Shell Project"
 
 .SH NAME
-hsh Simple Shell \-  command language interpreter
+hsh Simple Shell \- command language interpreter
 
 .SH SYNOPSIS
 .B shell_program
 
 .SH DESCRIPTION
-The shell_program is a basic shell implementation that provides a command-line interface for executing commands. It reads input from the user, parses commands, and executes them in separate processes.
+The shell_program is a basic shell implementation that reads user input, parses commands, and executes them in separate processes. The shell supports both built-in commands and the execution of external programs.
 
 .SH OPTIONS
 No command-line options are supported.
 
 .SH USAGE / COMPILATION
-All files are to be compiled using "gcc -Wall -Werror -Wextra -pedantic *.c -o hsh"
+To compile the program:
+.B gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 .SH RETURN VALUE
-The shell_program returns 0 upon successful execution. Error codes might be returned if there are issues with command execution.
+The shell returns 0 if a command is successfully executed. Non-zero values may be returned to indicate errors:
+- 1: Command not found
+- 2: Invalid usage of a built-in command
 
 .SH COMMANDS
-The simple-shell supports the following built-in commands:
-
-.BR exit
-Exit the simple-shell. If a status is provided, it will be used as the exit status.
-
-.BR env
-Prints the current environment.
+The following built-in commands are supported:
+- .BR exit [status]
+  Exit the shell. If a status is provided, it will be used as the exit status.
+- .BR env
+  Print the current environment variables.
 
 .SH EXAMPLES
 .PP
@@ -33,21 +34,23 @@ Prints the current environment.
 #cisfun$ ls
 ./shell: No such file or directory
 #cisfun$ /bin/ls
-barbie_j       env-main.c  exec.c  fork.c  pid.c  ppid.c    prompt   prompt.c  shell.c  stat.c         wait
-env-environ.c  exec    fork    mypid   ppid   printenv  promptc  shell     stat test_scripting.sh  wait.c
+barbie_j       env-main.c  exec.c  fork.c  pid.c  ppid.c    prompt   prompt.c  shell.c  stat.c  wait.c
+env-environ.c  exec    fork    mypid   ppid   printenv  promptc  shell     stat test_scripting.sh
 #cisfun$ exit
-#cisfun$ julien@ubuntu:~/shell$
+#cisfun$ 
+
 .PP
 .B julien@ubuntu:~/shell$ echo "/bin/ls" | ./hsh
-barbie_j       env-main.c  exec.c  fork.c  pid.c  ppid.c    prompt   prompt.c  shell.c  stat.c         wait
-env-environ.c  exec    fork    mypid   ppid   printenv  promptc  shell     stat test_scripting.sh  wait.c
+barbie_j       env-main.c  exec.c  fork.c  pid.c  ppid.c    prompt   prompt.c  shell.c  stat.c  wait.c
+env-environ.c  exec    fork    mypid   ppid   printenv  promptc  shell     stat test_scripting.sh
 .B julien@ubuntu:~/shell$
 
 .SH SEE ALSO
-Other related commands or programs.
+.BR bash (1), 
+.BR sh (1)
 
 .SH BUGS
-There may be potential errors or problems with input handling.
+Potential issues with input parsing and error handling in edge cases.
 
 .SH REPORTING BUGS
 Report bugs to the author.
