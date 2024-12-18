@@ -1,55 +1,59 @@
-.TH SIMPLE_SHELL 18 "december 2024" "Simple Shell Manual"
+.TH SIMPLE_SHELL 1 "December  2024" "version 1.0" "Simple Shell Project"
+
 .SH NAME
-simple_shell \- a simple shell implementation
+hsh Simple Shell \-  command language interpreter
+
 .SH SYNOPSIS
-simple_shell
+.B shell_program
+
 .SH DESCRIPTION
-The \fBsimple_shell\fR is a basic UNIX command line interpreter developed as part of the Simple Shell Group Project. It interprets user commands and executes them accordingly.
+The shell_program is a basic shell implementation that provides a command-line interface for executing commands. It reads input from the user, parses commands, and executes them in separate processes.
 
 .SH OPTIONS
-The \fBsimple_shell\fR does not support any command-line options.
+No command-line options are supported.
+
+.SH USAGE / COMPILATION
+All files are to be compiled using "gcc -Wall -Werror -Wextra -pedantic *.c -o hsh"
+
+.SH RETURN VALUE
+The shell_program returns 0 upon successful execution. Error codes might be returned if there are issues with command execution.
 
 .SH COMMANDS
-The following commands are supported by the shell:
+The simple-shell supports the following built-in commands:
 
 .BR exit
-Exits the shell.
+Exit the simple-shell. If a status is provided, it will be used as the exit status.
 
 .BR env
 Prints the current environment.
-.SH USAGE
-To start the Simple Shell, execute the following command:
-.nf
-\fB$ ./shell\fR
-.fi
-Upon launching the shell, users will gain access to a versatile toolkit
-for managing files, executing programs, and customizing their system 
-environment.
 
 .SH EXAMPLES
-Below are some illustrative examples that shows the functionality of 
-the Simple Shell:
-.nf
-\fB$ ./shell
+.PP
+.B julien@ubuntu:~/shell$ ./hsh
 #cisfun$ ls
-Desktop  Documents  Downloads  Music  Pictures  Videos
-
-#cisfun$ echo "Hello, World!"
-Hello, World!
-
-#cisfun$ env
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
-SHELL=/bin/bash
-HOME=/home/user
-...
-
+./shell: No such file or directory
+#cisfun$ /bin/ls
+barbie_j       env-main.c  exec.c  fork.c  pid.c  ppid.c    prompt   prompt.c  shell.c  stat.c         wait
+env-environ.c  exec    fork    mypid   ppid   printenv  promptc  shell     stat test_scripting.sh  wait.c
 #cisfun$ exit
-.fi
-.SH AUTHOR
-The Simple Shell was developed by Aynur Musayeva.
+#cisfun$ julien@ubuntu:~/shell$
+.PP
+.B julien@ubuntu:~/shell$ echo "/bin/ls" | ./hsh
+barbie_j       env-main.c  exec.c  fork.c  pid.c  ppid.c    prompt   prompt.c  shell.c  stat.c         wait
+env-environ.c  exec    fork    mypid   ppid   printenv  promptc  shell     stat test_scripting.sh  wait.c
+.B julien@ubuntu:~/shell$
+
+.SH SEE ALSO
+Other related commands or programs.
+
+.SH BUGS
+There may be potential errors or problems with input handling.
 
 .SH REPORTING BUGS
-If you encounter any issues or bugs, please report her aynurmusayeva2007@gmail.com for prompt resolution.
+Report bugs to the author.
 
 .SH COPYRIGHT
-This is free software: you are free to modify and distribute it.
+This is free software.
+
+.SH AUTHORS
+This manual page was written for the Simple Shell Project by Aynur Musayeva.
