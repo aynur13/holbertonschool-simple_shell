@@ -1,4 +1,4 @@
-.TH SIMPLE_SHELL 1 "May 2024" "Simple Shell Manual"
+.TH SIMPLE_SHELL 18 "december 2024" "Simple Shell Manual"
 .SH NAME
 simple_shell \- a simple shell implementation
 .SH SYNOPSIS
@@ -46,7 +46,7 @@ HOME=/home/user
 #cisfun$ exit
 .fi
 .SH AUTHOR
-The Simple Shell was developed by Kamal Abdullayev and Sohrab Yusibov.
+The Simple Shell was developed by Aynur Musayeva.
 
 .SH REPORTING BUGS
 If you encounter any issues or bugs, please report her aynurmusayeva2007@gmail.com for prompt resolution.
