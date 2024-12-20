@@ -1,58 +1,55 @@
-.\" Manual page for ShellProgram
-.TH SHELLPROGRAM 1 "December 2024" "Version 1.2" "Linux edition"
-
+.TH SIMPLE_SHELL 1 "December 2024" "Simple Shell Manual"
 .SH NAME
-ShellProgram \- a simple shell program
-
+simple_shell \- a simple shell implementation
 .SH SYNOPSIS
-.B ShellProgram
-
+simple_shell
 .SH DESCRIPTION
-ShellProgram is a basic command-line interpreter that allows users to enter commands for execution. It provides a simple interface to the underlying operating system. This shell program reads input from the user, parses commands, and executes them in separate processes.
-
-.SH USAGE / COMPILATION
-ShellProgram operates in a loop, continually prompting for user input and executing commands. It supports basic shell functionalities. All files are to be compiled using "gcc -Wall -Werror -Wextra -pedantic *.c -o hsh"
-
-.SH COMMANDS
-Supported commands:
-.TP
-.BR exit
-Exit ShellProgram. If a status is provided, it will be used as the exit status.
+The \fBsimple_shell\fR is a basic UNIX command line interpreter developed as part of the Simple Shell Group Project. It interprets user commands and executes them accordingly.
 
 .SH OPTIONS
-No command-line options are supported.
+The \fBsimple_shell\fR does not support any command-line options.
 
-.SH RETURN VALUE
-ShellProgram returns 0 upon successful execution. Error codes might be returned if there are issues with command execution.
+.SH COMMANDS
+The following commands are supported by the shell:
+
+.BR exit
+Exits the shell.
+
+.BR env
+Prints the current environment.
+.SH USAGE
+To start the Simple Shell, execute the following command:
+.nf
+\fB$ ./shell\fR
+.fi
+Upon launching the shell, users will gain access to a versatile toolkit
+for managing files, executing programs, and customizing their system 
+environment.
 
 .SH EXAMPLES
-Running ShellProgram:
-.B $ ShellProgram
+Below are some illustrative examples that shows the functionality of 
+the Simple Shell:
+.nf
+\fB$ ./shell
+#cisfun$ ls
+Desktop  Documents  Downloads  Music  Pictures  Videos
 
-.SH PATH
-It will look inside all directories in the PATH environment variable for executables.
+#cisfun$ echo "Hello, World!"
+Hello, World!
 
-.SH SEE ALSO
-bash(1), sh(1), execve(2)
+#cisfun$ env
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+SHELL=/bin/bash
+HOME=/home/user
+...
 
-.SH AUTHORS
-Created by Aynura Musayeva.
-
-.SH BUGS
-Single space required after argument.
-
-.SH COPYRIGHT
-This is free software; see the source for copying conditions. There is NO warranty;
-
-.SH DISCLAIMER
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
+#cisfun$ exit
+.fi
+.SH AUTHOR
+The Simple Shell was developed by Aynur Musayeva and Valid Orucov.
 
 .SH REPORTING BUGS
-Report bugs to the authors.
+If you encounter any issues or bugs, please report them to aynurmusayeva2007@gmail.com or orujovvalid2020@gmail.com for prompt resolution.
 
-.SH HISTORY
-Brief history or version updates.
-
-.SH REFERENCES
-Any references or resources used in developing the ShellProgram.
-
+.SH COPYRIGHT
+This is free software: you are free to modify and distribute it.
