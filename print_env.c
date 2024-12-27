@@ -6,5 +6,5 @@
 */
 void print_env(char **env)
 {
-    // Function implementation
+    
 }
